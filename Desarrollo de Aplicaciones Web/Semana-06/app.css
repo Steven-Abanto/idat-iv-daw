@@ -1,11 +1,20 @@
-#Contenedor{
-height: 300px;
-width: 300px;
-background-color: rgb(255, 100, 100);
-margin-left: 10px;
-}
+
 
 #lblResultado, #lblDatos{
     font-size: 40px;
     font-weight: bold;
+}
+
+.ContenedorRojo{
+    height: 100px;
+    width: 100px;
+    background-color: rgb(255, 100, 100);
+    margin-left: 10px;
+}
+
+.ContenedorAzul{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(70, 104, 255);
+    margin-left: 10px;
 }
