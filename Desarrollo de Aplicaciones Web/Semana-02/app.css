@@ -1,0 +1,50 @@
+/* Aplicar estilo a una etiqueta en general */
+div{
+    background-color: red;
+}
+
+/* # aplica estilo por id */
+#p1{
+    background-color: salmon;
+}
+
+/* Aplica estilo a través del class */
+.CP{
+    background-color: orange;
+}
+
+/* Aplica pseudo-elemento */
+.CP::first-letter{
+    background-color: green;
+    font-size: 20px;
+}
+
+/* Aplica estilo a pseudo-clase */
+.CP:hover{
+    background-color: palevioletred;
+    font-size: 20px;
+}
+
+/* Aplica por atributo */
+[name="ParaPrueba"]{
+    font-size: 25px;
+    color: peru;
+}
+[Atributo="ParaPrupru"]{
+    font-size: 30px;
+    color:tomato;
+}
+
+/* Aplica a más de uno  */
+.CP , #p1{
+    font-weight: bold;
+}
+
+/* Aplica a un elemento dentro de un selector  */
+.CP span {
+    color: white;
+}
+
+#p1 span {
+    color: white;
+}
