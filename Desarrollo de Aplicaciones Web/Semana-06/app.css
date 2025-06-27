@@ -1,6 +1,6 @@
 
 
-#lblResultado, #lblDatos{
+#lblTotal{
     font-size: 40px;
     font-weight: bold;
 }
@@ -18,3 +18,4 @@
     background-color: rgb(70, 104, 255);
     margin-left: 10px;
 }
+

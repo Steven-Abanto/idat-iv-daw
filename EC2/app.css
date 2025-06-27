@@ -1,20 +1,14 @@
 
 
-#lblResultado, #lblDatos{
-    font-size: 40px;
+#lblTotal{
+    font-size: 20px;
     font-weight: bold;
 }
 
-.ContenedorRojo{
-    height: 100px;
-    width: 100px;
-    background-color: rgb(255, 100, 100);
-    margin-left: 10px;
+#btnProcesar{
+    margin-left: 15px;
 }
 
-.ContenedorAzul{
-    height: 200px;
-    width: 200px;
-    background-color: rgb(70, 104, 255);
-    margin-left: 10px;
+.btn-primary{
+    font-weight: bold;
 }
