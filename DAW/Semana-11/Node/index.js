@@ -34,6 +34,7 @@ app.get('/Alumnos/Listar', (req, res) => {
  
 });
 
+
 /* Endpoint: https://127.0.0.1:3000/Alumnos/Registrar
    Body: { nombre, apellido, edad}
  
@@ -69,11 +70,12 @@ app.post('/Alumnos/Registrar', (req, res) => {
         }
     });
 });
- 
+
+
 app.get('/Alumnos/Notas/Reporte', (req, res) => {
     var lista;
      
-    const sql = "Select A.Nombre, A.Apellido, AVG(N.Nota) as Promedio From Notas N JOIN Alumnos A ON N.IdAlumno = A.Id GROUP BY A.Nombre, A.Apellido"
+    const sql = "Select A.Id, A.Nombre, A.Apellido, ROUND(AVG(N.Nota), 2) as Promedio From Notas N JOIN Alumnos A ON N.IdAlumno = A.Id GROUP BY A.Id, A.Nombre, A.Apellido"
  
     db.query(sql, (error,results) => {
  
