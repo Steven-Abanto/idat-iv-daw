@@ -70,7 +70,21 @@ app.post('/Alumnos/Registrar', (req, res) => {
     });
 });
  
-
+app.get('/Alumnos/Notas/Reporte', (req, res) => {
+    var lista;
+     
+    const sql = "Select A.Nombre, A.Apellido, AVG(N.Nota) as Promedio From Notas N JOIN Alumnos A ON N.IdAlumno = A.Id GROUP BY A.Nombre, A.Apellido"
+ 
+    db.query(sql, (error,results) => {
+ 
+        if(error){
+            return res.status(500).send('Error al hacer consulta');
+        }else{
+            lista = results;
+            return res.status(200).json(lista);
+        }
+    });
+});
 
 /* Levanta el servidor */
 const hostname='127.0.0.1';
