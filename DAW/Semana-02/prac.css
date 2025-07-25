@@ -1,0 +1,38 @@
+div{
+    font-weight: bold;
+}
+
+#p1{
+    background-color: lightslategray;
+}
+
+#p1 span{
+    color: white;
+}
+
+.Clase1{
+    background-color: teal;
+}
+.Clase1 span:hover{
+    font-size: 30px;
+}
+
+[name="Parrafo"]{
+    background-image: url(https://i0.wp.com/www.actualidadambiental.pe/wp-content/uploads/2024/11/capibara-parque-de-las-leyendas.jpg?fit=1200%2C799&ssl=1);
+    background-size: 200px;
+    background-position: center;
+}
+[name="Parrafo"] .Clase1{
+    background-color: transparent;
+}
+
+[atributo="Atrib"]{
+    font-size: 30px;
+}
+
+#p1::first-letter , .Clase1 span{
+    font-size: 25px;
+    color: red;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: normal;
+}
