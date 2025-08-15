@@ -72,12 +72,29 @@ app.post('/Alumnos/Registrar', (req, res) => {
 });
 
 
-app.get('/Alumnos/Notas/Reporte', (req, res) => {
+app.get('/Notas', (req, res) => {
     var lista;
      
-    const sql = "Select A.Id, A.Nombre, A.Apellido, ROUND(AVG(N.Nota), 2) as Promedio From Notas N JOIN Alumnos A ON N.IdAlumno = A.Id GROUP BY A.Id, A.Nombre, A.Apellido"
+    const sql = "Select A.id, A.nombres, A.apellidos, ROUND(AVG(N.Nota), 2) as Promedio From Notas N JOIN Alumnos A ON N.IdAlumno = A.id GROUP BY A.id, A.nombres, A.apellidos ORDER BY A.id"
  
     db.query(sql, (error,results) => {
+ 
+        if(error){
+            return res.status(500).send('Error al hacer consulta');
+        }else{
+            lista = results;
+            return res.status(200).json(lista);
+        }
+    });
+});
+
+app.get('/Notas/:id', (req, res) => {
+    var lista;
+    const id = req.params.id;
+    const sql = "Select A.id, A.nombres, A.apellidos, N.Nota From Notas N JOIN Alumnos A ON N.IdAlumno = A.id WHERE A.Id = ?"
+    const values = [id];
+
+    db.query(sql, values, (error,results) => {
  
         if(error){
             return res.status(500).send('Error al hacer consulta');

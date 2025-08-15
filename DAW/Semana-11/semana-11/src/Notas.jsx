@@ -10,7 +10,7 @@ function Notas() {
   const [listaAlumnos, setListaAlumnos] = useState([])
  
   useEffect(()=>{
-    fetch('http://127.0.0.1:3000/Alumnos/Notas/Reporte')
+    fetch('http://127.0.0.1:3000/Notas/')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Error al obtener alumnos');
@@ -39,10 +39,10 @@ function Notas() {
             </thead>
             <tbody>
                 {listaAlumnos.map((fila)=>(
-                    <tr key={fila.Id}>
-                        <td>{fila.Id}</td>
-                        <td>{fila.Nombre}</td>
-                        <td>{fila.Apellido}</td>
+                    <tr key={fila.id}>
+                        <td>{fila.id}</td>
+                        <td>{fila.nombres}</td>
+                        <td>{fila.apellidos}</td>
                         <td>{fila.Promedio}</td>
                     </tr>
                 ))}

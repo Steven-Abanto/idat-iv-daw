@@ -2,6 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import Multiplicando from './Multiplicando';
 import Alumnos from './Alumnos';
 import Notas from './Notas';
+import NotasIndividuales from './NotasIndividuales';
  
 export default function App() {
   return (
@@ -10,7 +11,7 @@ export default function App() {
       <nav>
         <Link to="/">Multiplicando</Link> |{' '}
         <Link to="/Alumnos/Listar">Alumnos</Link> |{' '}
-        <Link to="/Alumnos/Notas/Reporte">Notas</Link>
+        <Link to="/Notas">Notas</Link>
       </nav>
  
  
@@ -18,7 +19,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Multiplicando />} />
         <Route path="/Alumnos/Listar" element={<Alumnos />} />
-        <Route path="/Alumnos/Notas/Reporte" element={<Notas />} />
+        <Route path="/Notas" element={<Notas />} />
+        <Route path="/Notas/:id" element={<NotasIndividuales />} />
       </Routes>
  
  
