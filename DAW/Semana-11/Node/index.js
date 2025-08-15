@@ -91,7 +91,7 @@ app.get('/Notas', (req, res) => {
 app.get('/Notas/:id', (req, res) => {
     var lista;
     const id = req.params.id;
-    const sql = "Select A.id, A.nombres, A.apellidos, N.Nota From Notas N JOIN Alumnos A ON N.IdAlumno = A.id WHERE A.Id = ?"
+    const sql = "Select A.Id, A.Nombres, A.Apellidos, N.Nota From Notas N JOIN Alumnos A ON N.IdAlumno = A.id WHERE A.Id = ?"
     const values = [id];
 
     db.query(sql, values, (error,results) => {

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 function NotasIndividuales(){
     const {id} = useParams()
-    const [listaAlumnos, setListaAlumnos] = useState([])
+    const [listaNotas, setListaNotas] = useState([])
 
     useEffect(()=>{
         fetch('http://127.0.0.1:3000/Notas/'+id)
@@ -14,7 +14,7 @@ function NotasIndividuales(){
             return res.json();
         })
         .then((data) => {
-            setListaAlumnos(data);
+            setListaNotas(data);
         })
         .catch((err) => {
         
@@ -33,11 +33,11 @@ function NotasIndividuales(){
                 </tr>
             </thead>
             <tbody>
-                {listaAlumnos.map((fila)=>(
+                {listaNotas.map((fila)=>(
                     <tr>
-                        <td>{fila.id}</td>
-                        <td>{fila.nombres}</td>
-                        <td>{fila.apellidos}</td>
+                        <td>{fila.Id}</td>
+                        <td>{fila.Nombres}</td>
+                        <td>{fila.Apellidos}</td>
                         <td>{fila.Nota}</td>
                     </tr>
                 ))}
